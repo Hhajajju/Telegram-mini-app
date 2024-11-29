@@ -4,194 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini App</title>
-    <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #000;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            flex-direction: column;
-        }
-
-        h1, h2, h3, h4, p {
-            margin: 15px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 18px;
-            margin: 10px;
-        }
-
-        /* Button Styles */
-        button, .button {
-            background-color: #FFD700; /* Gold */
-            border: none;
-            padding: 15px 30px;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 50px; /* Oval button */
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin: 10px;
-        }
-
-        button:hover, .button:hover {
-            background-color: #DAA520; /* Darker gold on hover */
-        }
-
-        button:active, .button:active {
-            background-color: #B8860B; /* Darker gold on click */
-        }
-
-        button:disabled, .button:disabled {
-            background-color: #A9A9A9;
-            cursor: not-allowed;
-        }
-
-        /* Loading Screen */
-        #loading-screen {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
-
-        #loading-screen h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        #loading-screen img {
-            margin-top: 20px;
-        }
-
-        /* Section Styles */
-        .section {
-            display: none;
-            width: 100%;
-            max-width: 480px; /* For small screen */
-            padding: 20px;
-            text-align: center;
-        }
-
-        h2, h3 {
-            color: #FFD700;
-        }
-
-        .timer {
-            font-size: 14px;
-            color: #ddd;
-        }
-
-        /* Home Section */
-        #home-section {
-            display: block;
-        }
-
-        /* Footer Section */
-        .footer {
-            position: fixed;
-            bottom: 10px;
-            left: 0;
-            width: 100%;
-            background-color: #333;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .footer a {
-            margin: 0 15px;
-            font-size: 18px;
-        }
-
-        /* Ads Section */
-        #ads-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
-        }
-
-        .ads-button-container {
-            background-color: #222;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .ads-button-container span {
-            display: block;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        .ads-button-container button {
-            width: 100%;
-            padding: 10px 0;
-        }
-
-        .ads-button-container p {
-            font-size: 14px;
-            color: #bbb;
-            margin-top: 10px;
-        }
-
-        /* Withdrawal Form */
-        #withdraw-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        #withdraw-form input, #withdraw-form select {
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #444;
-            background-color: #333;
-            color: white;
-        }
-
-        #withdraw-form label {
-            color: #ccc;
-            font-size: 14px;
-        }
-
-        /* Media Queries for Small Screens */
-        @media screen and (max-width: 600px) {
-            .footer a {
-                font-size: 16px;
-            }
-
-            .button, .claim-btn {
-                width: 100%;
-            }
-
-            .section {
-                padding: 10px;
-            }
-
-            .ads-button-container {
-                padding: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -218,13 +31,58 @@
         <h3>Watch Ads to Earn</h3>
         <div id="ads-buttons">
             <!-- Dynamic ad buttons will be inserted here -->
+            
             <!-- 10 buttons for watching ads -->
             <div class="ads-button-container">
                 <span>Watch ad 1</span>
                 <button class="claim-btn" onclick="watchAds(0)">Start</button>
                 <p id="timer-0" class="timer">Next claim in: 00:00:00</p>
             </div>
-            <!-- Repeat for the other 9 ads -->
+            <div class="ads-button-container">
+                <span>Watch ad 2</span>
+                <button class="claim-btn" onclick="watchAds(1)">Start</button>
+                <p id="timer-1" class="timer">Next claim in: 00:00:00</p>
+            </div>
+            <div class="ads-button-container">
+                <span>Watch ad 3</span>
+                <button class="claim-btn" onclick="watchAds(2)">Start</button>
+                <p id="timer-2" class="timer">Next claim in: 00:00:00</p>
+            </div>
+            <div class="ads-button-container">
+                <span>Watch ad 4</span>
+                <button class="claim-btn" onclick="watchAds(3)">Start</button>
+                <p id="timer-3" class="timer">Next claim in: 00:00:00</p>
+            </div>
+            <div class="ads-button-container">
+                <span>Watch ad 5</span>
+                <button class="claim-btn" onclick="watchAds(4)">Start</button>
+                <p id="timer-4" class="timer">Next claim in: 00:00:00</p>
+            </div>
+            <div class="ads-button-container">
+                <span>Watch ad 6</span>
+                <button class="claim-btn" onclick="watchAds(5)">Start</button>
+                <p id="timer-5" class="timer">Next claim in: 00:00:00</p>
+            </div>
+            <div class="ads-button-container">
+                <span>Watch ad 7</span>
+                <button class="claim-btn" onclick="watchAds(6)">Start</button>
+                <p id="timer-6" class="timer">Next claim in: 00:00:00</p>
+            </div>
+            <div class="ads-button-container">
+                <span>Watch ad 8</span>
+                <button class="claim-btn" onclick="watchAds(7)">Start</button>
+                <p id="timer-7" class="timer">Next claim in: 00:00:00</p>
+            </div>
+            <div class="ads-button-container">
+                <span>Watch ad 9</span>
+                <button class="claim-btn" onclick="watchAds(8)">Start</button>
+                <p id="timer-8" class="timer">Next claim in: 00:00:00</p>
+            </div>
+            <div class="ads-button-container">
+                <span>Watch ad 10</span>
+                <button class="claim-btn" onclick="watchAds(9)">Start</button>
+                <p id="timer-9" class="timer">Next claim in: 00:00:00</p>
+            </div>
         </div>
     </div>
 
@@ -276,48 +134,6 @@
         <a href="#" onclick="showSection('withdraw-section')">Withdraw</a>
     </div>
 
-    <script>
-        // JavaScript code goes here...
-
-        // Global variables for the balance and reward process
-        let userBalance = 0.000; // User's initial balance
-        let referralEarnings = 0.000; // Referral earnings
-        let claimAmounts = 0.005; // Reward for each claim
-
-        // Show the section when clicked
-        function showSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Show the selected section
-            document.getElementById(sectionId).style.display = 'block';
-        }
-
-        // Handle claiming daily rewards
-        function claimDailyReward() {
-            userBalance += claimAmounts;
-            document.getElementById("balance").textContent = userBalance.toFixed(3);
-            updateTimer('daily-reward-timer');
-        }
-
-        // Start the daily reward timer
-        function updateTimer(timerId) {
-            const timerElement = document.getElementById(timerId);
-            let timeLeft = 3600; // 1 hour for the daily reward
-            setInterval(() => {
-                timeLeft--;
-                const hours = Math.floor(timeLeft / 3600);
-                const minutes = Math.floor((timeLeft % 3600) / 60);
-                const seconds = timeLeft % 60;
-                timerElement.textContent = `Next claim in: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-                if (timeLeft <= 0) {
-                    clearInterval(interval);
-                }
-            }, 1000);
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
